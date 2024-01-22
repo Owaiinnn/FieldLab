@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flowbite@2.0.0/dist/flowbite.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <title>Your House Booking Website</title>
+</head>
+<body>
+    <nav
+        class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="images/logo.webp" class="h-8" alt="Flowbite Logo">
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Huren</span>
+            </a>
+            <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                <button data-collapse-toggle="navbar-sticky" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                    aria-controls="navbar-sticky" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+                <ul
+                    class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    <li>
+                        <a href="homepage.html"
+                            class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                            aria-current="page">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
+                    </li>
+                    <li>
+                        <a href="contact.html"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br>
+    <div class="container mx-auto my-8">
+        <div class="filter-section bg-gray-100 p-8 rounded-md">
+            <h1 class="text-2xl font-semibold mb-4">Where are you going?</h1>
+
+            <form class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="form-control">
+                    <label for="checkin" class="label">Check-in Date</label>
+                    <input type="date" id="checkin" name="checkin" class="input">
+                </div>
+
+                <div class="form-control">
+                    <label for="checkout" class="label">Check-out Date</label>
+                    <input type="date" id="checkout" name="checkout" class="input">
+                </div>
+
+                <div class="form-control">
+                    <label for="adults" class="label">Adults</label>
+                    <input type="number" id="adults" name="adults" value="0" class="input" min="0" max="10">
+                </div>
+
+                <div class="form-control">
+                    <label for="children" class="label">Children</label>
+                    <input type="number" id="children" name="children" value="0" class="input" min="0" max="5">
+                </div>
+
+                <div class="form-control">
+                    <label for="rooms" class="label">Rooms</label>
+                    <input type="number" id="rooms" name="rooms" value="1" class="input" min="1" max="5">
+                </div>
+
+                <div class="form-control col-span-2">
+                    <input type="radio" id="workTravel" name="travelType" value="work" class="radio">
+                    <label for="workTravel" class="label">I'm traveling for work</label>
+                </div>
+
+                <div class="form-control col-span-2">
+                    <input type="radio" id="pleasureTravel" name="travelType" value="pleasure" class="radio">
+                    <label for="pleasureTravel" class="label">I'm traveling for pleasure</label>
+                </div>
+                <button type="submit" class="btn btn-primary col-span-3">Search</button>
+            </form>
+        </div>
+    </div>
+    <p class="text-xl font-semibold">View All:</p>
+    <div class="container">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 gap-4">
+            <div class="bg-white p-4 shadow-lg rounded-md">
+                <img src="images/713ac14f-0f78-4060-aa72-5f8e641f6a42.jpg" alt="Sunny Coastal Bungalow"
+                    class="w-full h-40 object-cover mb-4 rounded-md">
+                <h2 class="text-xl font-semibold mb-2">Sunny Coastal Bungalow</h2>
+                <p class="text-gray-600 mb-4">Enjoy a relaxing stay in our sunny coastal bungalow with stunning views.
+                </p>
+                <p class="text-gray-600 mb-4">6 persons
+                </p>
+                <a href="#" class="text-gray-600 underline mt-2 view-product" data-fancybox
+                    data-src="#sunny-coastal-bungalow-info">View Product</a>
+            </div>
+
+            <div class="bg-white p-4 shadow-lg rounded-md">
+                <img src="images/58bb3eb4-eeed-431f-90cf-3d0594157c27.jpg" alt="Elegant Vineyard Villa"
+                    class="w-full h-40 object-cover mb-4 rounded-md">
+                <h2 class="text-xl font-semibold mb-2">Elegant Vineyard Villa</h2>
+                <p class="text-gray-600 mb-4">Indulge in the luxury of our elegant villa surrounded by picturesque
+                    vineyards.</p>
+                <p class="text-gray-600 mb-4">10 persons
+                </p>
+                <a href="#" class="text-gray-600 underline mt-2 view-product" data-fancybox
+                    data-src="#elegant-vineyard-villa-info">View Product</a>
+            </div>
+
+            <div class="bg-white p-4 shadow-lg rounded-md">
+                <img src="images/28d8b34c-c024-4686-be5b-4c541bbb078c.jpg" alt="Quaint Riverside Chalet"
+                    class="w-full h-40 object-cover mb-4 rounded-md">
+                <h2 class="text-xl font-semibold mb-2">Quaint Riverside Chalet</h2>
+                <p class="text-gray-600 mb-4">Experience charm and tranquility in our quaint chalet by the riverside.
+                </p>
+                <p class="text-gray-600 mb-4">3 persons
+                </p>
+                <a href="#" class="text-gray-600 underline mt-2 view-product" data-fancybox
+                    data-src="#quaint-riverside-chalet-info">View Product</a>
+            </div>
+
+            <div class="bg-white p-4 shadow-lg rounded-md">
+                <img src="images/89142437-7420-4532-9210-5eb1958fd01d.jpg" alt="Tropical Paradise Getaway"
+                    class="w-full h-40 object-cover mb-4 rounded-md">
+                <h2 class="text-xl font-semibold mb-2">Tropical Paradise Getaway</h2>
+                <p class="text-gray-600 mb-4">Escape to a tropical paradise with our luxurious and serene getaway.</p>
+                <p class="text-gray-600 mb-4">2 persons
+                </p>
+                <a href="#" class="text-gray-600 underline mt-2 view-product" data-fancybox
+                    data-src="#tropical-paradise-getaway-info">View Product</a>
+            </div>
+
+            <div class="bg-white p-4 shadow-lg rounded-md">
+                <img src="images/4d6514b1-e6f1-4f9b-b3d4-7a19e122e6dc.jpg" alt="Artistic Loft with City Views"
+                    class="w-full h-40 object-cover mb-4 rounded-md">
+                <h2 class="text-xl font-semibold mb-2">Artistic Loft with City Views</h2>
+                <p class="text-gray-600 mb-4">Immerse yourself in creativity with our artistic loft offering
+                    breathtaking city views.</p>
+                <p class="text-gray-600 mb-4">2 persons
+                </p>
+                <a href="#" class="text-gray-600 underline mt-2 view-product" data-fancybox
+                    data-src="#artistic-loft-with-city-views-info">View Product</a>
+            </div>
+
+            <div class="bg-white p-4 shadow-lg rounded-md">
+                <img src="images/f55acab0-1e39-4fd9-abf8-63c8f5b29d4d.jpg" alt="Secluded Mountain Lodge"
+                    class="w-full h-40 object-cover mb-4 rounded-md">
+                <h2 class="text-xl font-semibold mb-2">Secluded Mountain Lodge</h2>
+                <p class="text-gray-600 mb-4">Get away from it all in our secluded mountain lodge surrounded by nature.
+                </p>
+                <p class="text-gray-600 mb-4">4 persons
+                </p>
+                <a href="#" class="text-gray-600 underline mt-2 view-product" data-fancybox
+                    data-src="#secluded-mountain-lodge-info">View Product</a>
+            </div>
+        </div>
+    </div>
+    <div id="sunny-coastal-bungalow-info" style="display: none;" class="modal">
+        <div class="modal-content flex items-center justify-center">
+            <div id="sunny-coastal-bungalow-gallery" class="flex space-x-2">
+                <img src="images/713ac14f-0f78-4060-aa72-5f8e641f6a42.jpg" alt="Sunny Coastal Bungalow 1"
+                    class="w-1/2 h-60 object-cover rounded-md">
+                <img src="images/2dc61b0e-8173-4bba-aa79-d0a53b7bf74d.jpg" alt="Sunny Coastal Bungalow 2"
+                    class="w-1/2 h-60 object-cover rounded-md">
+            </div>
+            <div class="ml-6 w-1/2">
+                <h2 class="text-xl font-semibold mb-2">Sunny Coastal Bungalow</h2>
+                <p class="text-gray-600 mb-4">Embark on a journey of tranquility and rejuvenation as you indulge in a
+                    truly relaxing stay at our sunny coastal bungalow. Immerse yourself in the serenity of nature while
+                    enjoying the warmth of the sun and the gentle caress of coastal breezes.</p>
+                    <p class="text-gray-600 mb-4"> Our bungalow offers an
+                    idyllic retreat with breathtaking views that stretch as far as the eye can see. Whether you're
+                    sipping your morning coffee on the private terrace or unwinding in the cozy interiors, every moment
+                    promises to be a picturesque escape. Discover the perfect blend of comfort and natural beauty as you
+                    create lasting memories in this coastal haven.</p>
+                <p class="text-gray-700 mb-4">Accommodates: 2 persons</p>
+                <p class="text-gray-700 mb-4">Bathroom: 1</p>
+                <a href="booking.html"><button class="bg-blue-500 text-white py-2 px-4 rounded-md">Book Now</button></a>
+            </div>
+        </div>
+    </div>
+    <div id="elegant-vineyard-villa-info" style="display: none;" class="modal">
+        <div class="modal-content flex items-center justify-center">
+            <div id="elegant-vineyard-villa-gallery" class="flex space-x-2">
+                <img src="images/58bb3eb4-eeed-431f-90cf-3d0594157c27.jpg" alt="Elegant Vineyard Villa 1"
+                    class="w-1/2 h-60 object-cover rounded-md">
+                <img src="images/5bb91e73-6a37-492e-9a69-d96ffd6df16a.jpg" alt="Elegant Vineyard Villa 2"
+                    class="w-1/2 h-60 object-cover rounded-md">
+            </div>
+            <div class="ml-6 w-1/2">
+                <h2 class="text-xl font-semibold mb-2">Elegant Vineyard Villa</h2>
+                <p class="text-gray-600 mb-4">Indulge in the luxury of our elegant villa surrounded by picturesque
+                    vineyards. Unwind in the sophisticated ambiance and let the beauty of the vineyards captivate your
+                    senses.</p>
+                    <p class="text-gray-600 mb-4">Each moment in this exquisite villa is a celebration of refined living, from the tastefully
+                    designed interiors to the sweeping views of lush vineyards. Whether you're enjoying a glass of
+                    world-class wine on the terrace or exploring the vineyards, every detail is designed to elevate your
+                    experience. Experience a stay that combines opulence with nature's splendor in our Elegant Vineyard
+                    Villa.</p>
+                    <p class="text-gray-700 mb-4">Accommodates: 10 persons</p>
+                    <p class="text-gray-700 mb-4">Bathroom: 3 persons</p>
+                    <a href="booking.html"><button class="bg-blue-500 text-white py-2 px-4 rounded-md">Book Now</button></a>
+                </div>
+        </div>
+    </div>
+    <div id="quaint-riverside-chalet-info" style="display: none;" class="modal">
+        <div class="modal-content flex items-center justify-center">
+            <div id="quaint-riverside-chalet-gallery" class="flex space-x-2">
+                <img src="images/28d8b34c-c024-4686-be5b-4c541bbb078c.jpg" alt="Quaint Riverside Chalet 1"
+                    class="w-1/2 h-60 object-cover rounded-md">
+                <img src="images/d84e8d86-92e3-4833-bb26-2307da95c979.jpg" alt="Quaint Riverside Chalet 2"
+                    class="w-1/2 h-60 object-cover rounded-md">
+            </div>
+            <div class="ml-6 w-1/2">
+                <h2 class="text-xl font-semibold mb-2">Quaint Riverside Chalet</h2>
+                <p class="text-gray-600 mb-4">Experience charm and tranquility in our quaint chalet by the riverside.
+                    Nestled along the peaceful riverbanks, our chalet offers a serene escape from the hustle and bustle
+                    of daily life.</p>
+                    <p class="text-gray-600 mb-4">Immerse yourself in the soothing sounds of flowing water and the picturesque views of
+                    nature. Whether you're enjoying a riverside stroll or unwinding on the private patio, every moment
+                    is an opportunity to connect with nature. Discover the perfect blend of comfort and natural beauty
+                    in
+                    our Quaint Riverside Chalet.</p>
+                    <p class="text-gray-700 mb-4">Accommodates: 3 persons</p>
+                    <p class="text-gray-700 mb-4">Bathroom: 1 persons</p>
+                    <a href="booking.html"><button class="bg-blue-500 text-white py-2 px-4 rounded-md">Book Now</button></a>
+                </div>
+        </div>
+    </div>
+
+    <div id="tropical-paradise-getaway-info" style="display: none;" class="modal">
+        <div class="modal-content flex items-center justify-center">
+            <div id="tropical-paradise-getaway-gallery" class="flex space-x-4">
+                <img src="images/89142437-7420-4532-9210-5eb1958fd01d.jpg" alt="Tropical Paradise Getaway 1"
+                    class="w-1/2 h-60 object-cover rounded-md">
+                <img src="images/40f60e47-a868-47cd-8de3-584cb30e119f.jpg" alt="Tropical Paradise Getaway 2"
+                    class="w-1/2 h-60 object-cover rounded-md">
+            </div>
+            <div class="ml-6 w-1/2">
+                <h2 class="text-xl font-semibold mb-2">Tropical Paradise Getaway</h2>
+                <p class="text-gray-600 mb-4">Escape to a tropical paradise with our luxurious and serene getaway.
+                    Immerse yourself in the beauty of pristine beaches, lush landscapes, and crystal-clear waters.</p>
+                    <p class="text-gray-700 mb-4">Our
+                    getaway offers a haven for relaxation and rejuvenation, allowing you to unwind amidst the
+                    breathtaking tropical surroundings. Whether you're lounging on the sun-kissed beach or enjoying
+                    water activities, every moment is a celebration of paradise. Experience the perfect blend of
+                    elegance and tropical charm in our Tropical Paradise Getaway.</p>
+                    <p class="text-gray-700 mb-4">Accommodates: 2 persons</p>
+                    <p class="text-gray-700 mb-4">Bathroom: 1 persons</p>
+                    <a href="booking.html"><button class="bg-blue-500 text-white py-2 px-4 rounded-md">Book Now</button></a>
+                </div>
+        </div>
+    </div>
+
+    <div id="artistic-loft-with-city-views-info" style="display: none;" class="modal">
+        <div class="modal-content flex items-center justify-center">
+            <div id="artistic-loft-with-city-views-gallery" class="flex space-x-4">
+                <img src="images/4d6514b1-e6f1-4f9b-b3d4-7a19e122e6dc.jpg" alt="Artistic Loft with City Views 1"
+                    class="w-1/2 h-60 object-cover rounded-md">
+                <img src="images/f9affda8-1cc3-4a30-9d1e-d61231c0922d.jpg" alt="Artistic Loft with City Views 2"
+                    class="w-1/2 h-60 object-cover rounded-md">
+            </div>
+            <div class="ml-6 w-1/2">
+                <h2 class="text-xl font-semibold mb-3">Artistic Loft with City Views</h2>
+                <p class="text-gray-700 mb-4">Immerse yourself in creativity with our artistic loft offering
+                    breathtaking city views. The loft is designed to inspire and captivate, providing a unique space
+                    where art and modern living converge. Whether you're an artist seeking inspiration or a traveler
+                    looking for a one-of-a-kind experience, our loft invites you to explore the intersection of art and
+                    urban living. Enjoy panoramic views of the city skyline, and let your imagination soar in this
+                    distinctive artistic retreat.</p>
+                    <p class="text-gray-700 mb-4">Accommodates: 2 persons</p>
+                    <p class="text-gray-700 mb-4">Bathroom: 1</p>
+                    <a href="booking.html"><button class="bg-blue-500 text-white py-2 px-4 rounded-md">Book Now</button></a>
+                </div>
+        </div>
+    </div>
+    <div id="secluded-mountain-lodge-info" style="display: none;" class="modal">
+        <div class="modal-content flex items-center justify-center">
+            <div id="secluded-mountain-lodge-gallery" class="flex space-x-4">
+                <img src="images/f55acab0-1e39-4fd9-abf8-63c8f5b29d4d.jpg" alt="Secluded Mountain Lodge 1"
+                    class="w-1/2 h-96 object-cover rounded-md">
+                <img src="images/f6a69d49-de01-4e89-b389-7bfc573dc047.jpg" alt="Secluded Mountain Lodge 2"
+                    class="w-1/2 h-96 object-cover rounded-md">
+            </div>
+            <div class="ml-6 w-1/2">
+                <h2 class="text-2xl font-semibold mb-3">Secluded Mountain Lodge</h2>
+                <p class="text-gray-700 mb-4">Escape the hustle and bustle and get away from it all in our secluded
+                    mountain
+                    lodge, nestled in the heart of nature's embrace. Surrounded by pristine landscapes and breathtaking
+                    mountain vistas, this lodge offers a haven of tranquility and serenity.</p>
+                <p class="text-gray-700 mb-4">The lodge is strategically situated to provide a sense of seclusion,
+                    allowing
+                    you to reconnect with nature and find peace in the mountainous surroundings. Whether you're seeking
+                    a
+                    romantic retreat, a family getaway, or a solo adventure, our mountain lodge offers an escape from
+                    the
+                    demands of daily life.</p>
+                <p class="text-gray-700 mb-4">Unwind on the private deck, where the only sounds you'll hear are the
+                    rustling
+                    leaves and the gentle melody of birdsong. Explore nearby hiking trails, breathe in the crisp
+                    mountain
+                    air, and experience the unparalleled beauty that nature has to offer.</p>
+                <p class="text-gray-700 mb-4">Accommodates: 4 persons</p>
+                <p class="text-gray-700 mb-4">bathroom: 1</p>
+              <a href="booking.html"><button class="bg-blue-500 text-white py-2 px-4 rounded-md">Book Now</button></a>
+            </div>
+        </div>
+    </div>
+    <style>
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 100%;
+            height: 100%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 600px) {
+            .modal-content {
+                max-width: 90%;
+                max-height: 90%;
+            }
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $(".view-product").fancybox({
+                touch: false,
+                infobar: false,
+                toolbar: false,
+                smallBtn: true,
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.0.0/dist/flowbite.js"></script>
+</body>
+
+</html>
